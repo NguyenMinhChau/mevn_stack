@@ -50,6 +50,7 @@
     margin-top:auto;
     margin-left: 10px;
 }
+
 .img-hcmue {
     background-position: center center;
     background-repeat: no-repeat;
@@ -71,4 +72,7 @@ height: 100vh;
 display: flex;
 align-items: center;
 justify-content: center;
+}
+.category{
+    text-transform: uppercase;
 }

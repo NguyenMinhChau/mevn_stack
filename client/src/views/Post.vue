@@ -7,7 +7,7 @@
                     <v-card-actions class="pb-0">
                         <v-row class="mt-1 mx-1">
                             <v-col sm="2">
-                                <v-btn small outlined color="primary">{{post.category}}</v-btn>
+                                <v-btn small outlined color="primary" class="category">{{post.category}}</v-btn>
                             </v-col>
                             <v-col sm="10" class="d-flex justify-end">
                                 <v-btn color="success" text :to="{name: 'edit-post', params: {id: post._id}}">
@@ -29,6 +29,9 @@
         </v-row>
     </v-container>
 </template>
+<style>
+@import '../css/main.css';
+</style>
 <script>
 import API from '../api'
 export default {
