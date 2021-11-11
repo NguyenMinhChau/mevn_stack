@@ -76,3 +76,56 @@ justify-content: center;
 .category{
     text-transform: uppercase;
 }
+.form-control{
+    width: 100%;
+    outline: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 3px;
+    margin-top: 8px;
+}
+
+span + span{
+    margin: 5px 5px 8px 0;
+}
+
+.asc,
+.desc{
+    margin: 5px 0 8px 5px;
+}
+
+.line-clamp{
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.desc{
+    display: none;
+}
+@page {
+    size: 8in 10.25in;
+    margin: auto;
+}
+
+@media print {
+    .page {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after:always;
+    }
+}
+
+@media (max-width: 46.25em) {
+    .excel,
+    .print,
+    .pdf{
+        display: none;
+    }
+}
+

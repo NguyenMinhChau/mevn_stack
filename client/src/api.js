@@ -1,4 +1,4 @@
-// Thư viện HTTP Client dựa trên Promise
+// Thư viện giao tiếp HTTP với nhau dựa trên Promise
 //https://viblo.asia/p/tim-hieu-ve-thu-vien-axios-gAm5ywELZdb
 import axios from 'axios'
 const url = '/post'
