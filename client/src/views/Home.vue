@@ -6,9 +6,9 @@
               <v-btn class="btn" v-on:click="searchPost" color="success">
                 <i class="fas fa-search"></i> | Search</v-btn>
               <span><v-btn v-on:click="sortedArray" color="primary" class="asc">
-                <i class="fas fa-sort-amount-down-alt"></i> | Sort</v-btn></span>
+                <i class="fas fa-sort-alpha-down"></i> | Sort</v-btn></span>
               <span><v-btn v-on:click="sortedArray" color="error" class="desc">
-                <i class="fas fa-sort-amount-down"></i> | Sort</v-btn></span>
+                <i class="fas fa-sort-alpha-down-alt"></i> | Sort</v-btn></span>
               <span class="excel"><v-btn v-on:click="exportExcel" color="success">
                 <i class="fas fa-file-excel"></i> | Excel</v-btn></span>
               <span class="print"><v-btn v-on:click="exportPrint" color="info">
@@ -110,6 +110,7 @@ import XLSX from 'xlsx'
           window.print(printMe);
         },
         exportCSV: function(){
+          var universalBOM = "\uFEFF";
            //define the heading for each row of the data  
           const post = this.posts.map(item => {
             return [
@@ -132,7 +133,7 @@ import XLSX from 'xlsx'
           //display the created CSV data on the web browser   
           document.write(csv);  
           var hiddenElement = document.createElement('a');  
-          hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);  
+          hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(universalBOM+csv)
           hiddenElement.target = '_blank';  
           //provide the name for the CSV file to be downloaded  
           hiddenElement.download = 'MevnStackCSV.csv';  
